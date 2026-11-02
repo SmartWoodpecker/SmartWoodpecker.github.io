@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Andruha — первый тестовый лендинг</title>
-    <meta name="description" content="Прикольный тестовый лендинг веб-разработчика: тёмная тема, звёздное небо и анимации.">
+    <title>Andruha — Android-разработчик · 9 лет опыта</title>
+    <meta name="description" content="Android-разработчик с девятью годами опыта: Kotlin, Jetpack Compose, KMM. Проекты, стек и путь от AsyncTask до Compose.">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -17,13 +17,17 @@
 <header class="nav" id="nav">
     <div class="nav-inner">
         <a class="logo" href="#top"><span class="dot"></span>andruha<span style="color:var(--accent-2)">.dev</span></a>
-        <nav class="nav-links">
+        <nav class="nav-links" id="navLinks">
             <a href="#approach">Подход</a>
             <a href="#stack">Стек</a>
             <a href="#projects">Проекты</a>
             <a href="#path">Путь</a>
+            <a class="nav-menu-cta" href="#contact">Написать мне →</a>
         </nav>
         <a class="nav-cta" href="#contact">Написать мне</a>
+        <button class="nav-burger" id="navBurger" aria-label="Открыть меню" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
     </div>
 </header>
 
@@ -33,20 +37,21 @@
     <section class="hero">
         <div class="container">
             <div class="badge reveal"><span class="status"></span> открыт к новым проектам</div>
-            <h1 class="reveal d1">Делаю веб,<br>который <span class="grad-text">приятно трогать</span></h1>
+            <h1 class="reveal d1">Делаю Android-приложения,<br>которые <span class="grad-text">приятно трогать</span></h1>
             <div class="typewriter reveal d1"><span id="typed"></span><span class="caret"></span></div>
             <p class="lead reveal d2">
-                Первый тестовый лендинг: тёмная тема, звёздное небо на canvas,
-                живые анимации и ни одной внешней зависимости — просто HTML, CSS и немного JS.
+                Девять лет превращаю идеи в нативные приложения: Kotlin, Compose и здоровая
+                паранойя насчёт батареи. Да, это веб-страница — даже Android-разработчик
+                иногда выбирается из Android Studio.
             </p>
             <div class="btn-row reveal d2">
                 <a class="btn btn-primary" href="#projects">Смотреть проекты ↓</a>
                 <a class="btn btn-ghost" href="#contact">Связаться</a>
             </div>
             <div class="stats reveal d3">
-                <div class="stat"><b data-count="3">0</b><span>года в разработке</span></div>
-                <div class="stat"><b data-count="20" data-suffix="+">0</b><span>пет-проектов на GitHub</span></div>
-                <div class="stat"><b data-count="100" data-suffix="%">0</b><span>ванильного CSS</span></div>
+                <div class="stat"><b data-count="9">0</b><span>лет пишу под Android</span></div>
+                <div class="stat"><b data-count="12">0</b><span>приложений в Google Play</span></div>
+                <div class="stat"><b data-count="4" data-suffix=" млн+">0</b><span>установок у моих приложений</span></div>
             </div>
         </div>
     </section>
@@ -55,36 +60,36 @@
     <section id="approach">
         <div class="container">
             <span class="section-tag reveal">Подход</span>
-            <h2 class="section-title reveal">Четыре правила хорошего интерфейса</h2>
-            <p class="section-sub reveal">Коротко о том, что я вшиваю в каждый проект на уровне рефлекса.</p>
+            <h2 class="section-title reveal">Четыре правила хорошего приложения</h2>
+            <p class="section-sub reveal">Что вшито в каждый проект на уровне рефлекса.</p>
 
             <div class="bento">
                 <div class="cell big reveal">
                     <span class="emoji">⚡</span>
                     <h3>Сначала скорость</h3>
-                    <p>Сайт должен открываться раньше, чем пользователь успеет моргнуть.
-                        Никаких мегабайтных библиотек там, где хватит ста строк ванильного JS —
-                        как на этой странице, кстати.</p>
+                    <p>Приложение должно открываться раньше, чем пользователь успеет моргнуть.
+                        Cold start, размер APK и расход батареи — первые три метрики,
+                        которые я проверяю в любом проекте.</p>
                 </div>
                 <div class="cell reveal d1">
                     <span class="emoji">📱</span>
-                    <h3>Адаптив</h3>
-                    <p>От часов до ультраширокого монитора.</p>
+                    <h3>Все форм-факторы</h3>
+                    <p>Телефон, планшет, складной, Wear OS и Auto.</p>
                 </div>
                 <div class="cell reveal d2">
                     <span class="emoji">♿</span>
                     <h3>Доступность</h3>
-                    <p>Контраст, фокус, prefers-reduced-motion.</p>
+                    <p>TalkBack, крупный шрифт, контраст.</p>
                 </div>
                 <div class="cell wide reveal d1">
                     <span class="emoji">✨</span>
                     <h3>Микроанимации</h3>
-                    <p>Интерфейс должен отвечать на каждое действие — мягко, но заметно.</p>
+                    <p>Material Motion и анимации Compose: приложение отвечает на каждое касание — мягко, но заметно.</p>
                 </div>
                 <div class="cell wide reveal d2">
                     <span class="emoji">🧩</span>
                     <h3>Простота</h3>
-                    <p>Лучший код — тот, который не пришлось писать. Читаю задачу дважды, пишу один раз.</p>
+                    <p>Лучший код — тот, который не пришлось писать. Читаю задачу дважды, архитектуру проектирую один раз.</p>
                 </div>
             </div>
         </div>
@@ -98,10 +103,10 @@
         </div>
         <div class="marquee-wrap reveal">
             <div class="marquee" id="marquee">
-                <span class="chip">HTML5</span><span class="chip">CSS3</span><span class="chip">JavaScript</span>
-                <span class="chip">TypeScript</span><span class="chip">React</span><span class="chip">Vue</span>
-                <span class="chip">Node.js</span><span class="chip">Vite</span><span class="chip">Git</span>
-                <span class="chip">Figma</span><span class="chip">Docker</span><span class="chip">Canvas API</span>
+                <span class="chip">Kotlin</span><span class="chip">Java</span><span class="chip">Jetpack Compose</span>
+                <span class="chip">Coroutines</span><span class="chip">Flow</span><span class="chip">Room</span>
+                <span class="chip">Retrofit</span><span class="chip">Hilt</span><span class="chip">WorkManager</span>
+                <span class="chip">Gradle</span><span class="chip">KMM</span><span class="chip">Material 3</span>
             </div>
         </div>
     </section>
@@ -111,31 +116,31 @@
         <div class="container">
             <span class="section-tag reveal">Проекты</span>
             <h2 class="section-title reveal">Что уже руками сделал</h2>
-            <p class="section-sub reveal">Небольшая выставка: от учебных работ до экспериментов выходного дня.</p>
+            <p class="section-sub reveal">От пет-проектов до приложений с миллионами установок.</p>
 
             <div class="projects-grid">
                 <article class="project reveal">
-                    <div class="thumb thumb-1">🌦️</div>
+                    <div class="thumb thumb-1">🏃</div>
                     <div class="project-body">
-                        <h3>Погодный дашборд</h3>
-                        <p>Прогноз на неделю, красивые графики и геолокация. Учился работать с внешними API.</p>
-                        <div class="tags"><span class="tag">JS</span><span class="tag">API</span><span class="tag">Charts</span></div>
+                        <h3>Фитнес-трекер</h3>
+                        <p>Фоновый трекинг пробежек, датчики и уведомления. Работает целый день и не съедает батарею.</p>
+                        <div class="tags"><span class="tag">Kotlin</span><span class="tag">Sensors</span><span class="tag">Foreground Service</span></div>
                     </div>
                 </article>
                 <article class="project reveal d1">
-                    <div class="thumb thumb-2">🗂️</div>
+                    <div class="thumb thumb-2">💬</div>
                     <div class="project-body">
-                        <h3>Kanban-доска</h3>
-                        <p>Drag-and-drop без библиотек, localStorage и тёмная тема. Задачник, которым реально пользуюсь.</p>
-                        <div class="tags"><span class="tag">HTML5 DnD</span><span class="tag">Storage</span><span class="tag">UI</span></div>
+                        <h3>Мессенджер</h3>
+                        <p>Push через FCM и офлайн-первый подход: Room + WorkManager. Сообщения доезжают даже из тайги.</p>
+                        <div class="tags"><span class="tag">Compose</span><span class="tag">Room</span><span class="tag">FCM</span></div>
                     </div>
                 </article>
                 <article class="project reveal d2">
-                    <div class="thumb thumb-3">🎹</div>
+                    <div class="thumb thumb-3">🎧</div>
                     <div class="project-body">
-                        <h3>Синтезатор в браузере</h3>
-                        <p>Web Audio API, веб-клавиатура и осциллограф в реальном времени. Просто потому что было интересно.</p>
-                        <div class="tags"><span class="tag">Web Audio</span><span class="tag">Canvas</span><span class="tag">Fun</span></div>
+                        <h3>Подкаст-плеер</h3>
+                        <p>Kotlin Multiplatform: общая логика для Android и iOS, фоновое воспроизведение на Media3.</p>
+                        <div class="tags"><span class="tag">KMM</span><span class="tag">Media3</span><span class="tag">Coroutines</span></div>
                     </div>
                 </article>
             </div>
@@ -146,24 +151,24 @@
     <section id="path">
         <div class="container">
             <span class="section-tag reveal">Путь</span>
-            <h2 class="section-title reveal">Как я сюда попал</h2>
-            <p class="section-sub reveal">Три места учёбы из исходного Test.html — теперь в виде таймлайна.</p>
+            <h2 class="section-title reveal">9 лет с Android</h2>
+            <p class="section-sub reveal">От AsyncTask и Eclipse до Compose и KMM — весь путь от джуна до сеньора.</p>
 
             <div class="timeline">
                 <div class="milestone reveal">
-                    <time>шаг 01</time>
-                    <h3>Место учёбы №1</h3>
-                    <p>Первый «Hello, World», HTML из туториалов и осознание, что div — это глагол.</p>
+                    <time>2017 · джун</time>
+                    <h3>Java, XML и Eclipse</h3>
+                    <p>Первый рабочий смартфон на Android 5.0, ночи с NullPointerException и трепет перед первым релизом в Google Play.</p>
                 </div>
                 <div class="milestone reveal d1">
-                    <time>шаг 02</time>
-                    <h3>Место учёбы №2</h3>
-                    <p>JavaScript, асинхронность и первая бессонная ночь из-за зависшего промиса.</p>
+                    <time>2020 · мидл</time>
+                    <h3>Переезд на Kotlin</h3>
+                    <p>Мигрировал продуктовый код с Java на Kotlin, пока офис спорил «зачем». Через месяц спорить перестали.</p>
                 </div>
                 <div class="milestone reveal d2">
-                    <time>шаг 03</time>
-                    <h3>Место учёбы №3</h3>
-                    <p>Фреймворки, командная разработка и первые проекты, которыми не стыдно поделиться.</p>
+                    <time>2023 · сеньор</time>
+                    <h3>Compose и KMM</h3>
+                    <p>Главный экран — на Compose, бизнес-логика — в общем KMM-модуле. Теперь менторю джунов и не даю им врать в резюме про алгоритмы.</p>
                 </div>
             </div>
         </div>
@@ -174,10 +179,10 @@
         <div class="container">
             <div class="cta-panel reveal">
                 <h2>Есть идея? <span class="grad-text">Давайте сделаем</span></h2>
-                <p>Напишите пару строк о задаче — отвечу быстрее, чем загрузится среднестатистический сайт на WordPress.</p>
+                <p>Опишите задачу в паре строк — отвечу быстрее, чем соберётся чистый Gradle-билд.</p>
                 <div class="btn-row" style="justify-content: center;">
                     <a class="btn btn-primary" href="mailto:hello@example.com">✉️ hello@example.com</a>
-                    <a class="btn btn-ghost" href="https://github.com" target="_blank" rel="noopener">GitHub ↗</a>
+                    <a class="btn btn-ghost" href="https://play.google.com/store" target="_blank" rel="noopener">Google Play ↗</a>
                 </div>
             </div>
         </div>
@@ -272,7 +277,7 @@
     }
 
     /* ============ Печатающийся текст ============ */
-    const phrases = ['фронтенд', 'интерфейсы', 'анимации', 'пет-проекты', 'ванильный JS'];
+    const phrases = ['Android', 'Kotlin', 'Jetpack Compose', 'KMM', 'Material Design'];
     const typed = document.getElementById('typed');
     let pi = 0, ci = 0, deleting = false;
 
@@ -323,6 +328,21 @@
     addEventListener('scroll', () => {
         nav.classList.toggle('scrolled', scrollY > 20);
     }, { passive: true });
+
+    /* ============ Мобильное меню-бургер ============ */
+    const burger = document.getElementById('navBurger');
+    burger.addEventListener('click', () => {
+        const open = nav.classList.toggle('open');
+        burger.setAttribute('aria-expanded', open);
+    });
+
+    // закрываем меню после клика по любому пункту
+    document.querySelectorAll('#navLinks a').forEach(link => {
+        link.addEventListener('click', () => {
+            nav.classList.remove('open');
+            burger.setAttribute('aria-expanded', 'false');
+        });
+    });
 
     /* ============ Дублируем бегущую строку для бесшовности ============ */
     const marquee = document.getElementById('marquee');
