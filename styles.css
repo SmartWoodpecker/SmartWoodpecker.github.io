@@ -16,7 +16,10 @@
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
-html { scroll-behavior: smooth; }
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 76px;   /* чтобы якоря не прятались под фиксированной шапкой */
+}
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -24,6 +27,7 @@ body {
     color: var(--text);
     line-height: 1.6;
     overflow-x: hidden;
+    -webkit-tap-highlight-color: transparent;
 }
 
 ::selection { background: var(--accent-1); color: #fff; }
@@ -142,8 +146,70 @@ ul { list-style: none; }
     box-shadow: 0 8px 24px rgba(99, 102, 241, 0.45);
 }
 
+/* ============ Бургер-меню для мобильных ============ */
+.nav-burger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 42px;
+    height: 42px;
+    padding: 0 10px;
+    background: transparent;
+    border: 1px solid var(--card-border);
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.nav-burger span {
+    display: block;
+    height: 2px;
+    width: 100%;
+    background: var(--text);
+    border-radius: 2px;
+    transition: transform .3s, opacity .3s;
+}
+
+.nav.open .nav-burger span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav.open .nav-burger span:nth-child(2) { opacity: 0; }
+.nav.open .nav-burger span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* показывается только внутри мобильного меню */
+.nav-menu-cta { display: none; }
+
 @media (max-width: 720px) {
-    .nav-links { display: none; }
+    .nav-cta { display: none; }
+    .nav-burger { display: flex; }
+
+    .nav-links {
+        position: absolute;
+        top: 100%; left: 0; right: 0;
+        flex-direction: column;
+        gap: 0;
+        background: rgba(11, 15, 26, 0.97);
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
+        border-bottom: 1px solid var(--card-border);
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height .35s ease;
+    }
+
+    .nav.open .nav-links { max-height: 360px; }
+
+    .nav-links a {
+        padding: 16px 24px;
+        border-top: 1px solid var(--card-border);
+        font-size: 16px;
+    }
+
+    .nav-links a:first-child { border-top: none; }
+
+    .nav-menu-cta {
+        display: block;
+        color: var(--accent-2);
+        font-weight: 700;
+    }
 }
 
 /* ============ Общие секции ============ */
@@ -179,6 +245,7 @@ section { padding: 96px 24px; }
 
 /* ============ Hero ============ */
 .hero {
+    min-height: 100vh;    /* фолбэк для старых браузеров */
     min-height: 100svh;
     display: flex;
     align-items: center;
@@ -526,6 +593,27 @@ footer .heart { color: var(--accent-3); }
 .reveal.d1 { transition-delay: .1s; }
 .reveal.d2 { transition-delay: .2s; }
 .reveal.d3 { transition-delay: .3s; }
+
+/* ============ Мобильная адаптация ============ */
+@media (max-width: 720px) {
+    section { padding: 64px 20px; }
+    .hero { padding-top: 104px; }
+    .nav-inner { padding: 12px 20px; }
+    .section-sub { margin-bottom: 34px; }
+
+    /* кнопки столбиком на всю ширину — удобнее тапать */
+    .btn-row { flex-direction: column; align-items: stretch; }
+    .btn { justify-content: center; }
+
+    .stats { margin-top: 44px; gap: 12px; }
+
+    .cell { padding: 20px; }
+    .cell .emoji { font-size: 28px; }
+
+    .milestone { padding-bottom: 28px; }
+
+    .marquee { gap: 32px; }
+}
 
 @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after {
